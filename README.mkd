@@ -1,0 +1,37 @@
+Planet Ngx
+==========
+
+Planet Ngx is a collection of blogs related to Nginx aggregated into one source.
+If you're interested in having your blog aggregated here, it's pretty simple.
+
+Requirements
+------------
+
+* Must be related to Nginx 72% of the time.
+* Blogs are expected to be in line with a positive community.
+* Blogs are expected to be family friendly.
+* Must not distribute bad advice (such as Pitfalls). 
+
+Information Needed
+------------------
+
+* Feed URL
+* Real Name
+* Nick Name
+* Picture of Self (64x64 pixels) 
+
+Add Yourself
+------------
+
+* Create a github account
+* Navigate to https://github.com/ngx/planet
+* Click "Fork"
+* You can edit your fork directly on the github website.
+
+  * Edit config.ini:
+  * Add your feed to the end and don't omit any values
+  * If you don't have an image for yourself use 'null.png'
+  * If you do have an image, be sure to add it to heads/
+
+* Click "Pull Request"
+* That's it! We'll approve the merge request if everything checks out.
