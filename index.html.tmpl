@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/misc/planet.css" type="text/css" title="Planet Style" />
+    <link rel="alternate" type="application/rss+xml" title="Planet Nginx" href="/rss20.xml" />
+    <script type="text/JavaScript" src="/misc/planet.js"></script>
+    <meta name="generator" content="Planet/2.0 +http://www.planetplanet.org" />
+    <meta name="keywords" content="nginx, ngx, planet" />
+    <meta name="description" content="ngx cc" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="google-site-verification" content="" />
+    <link type="text/css" rel="stylesheet" href="/static/css/site.css" media="all" />
+  </head>
+  <body>
+    <div id="header">
+      <a href="/">planet</a>|
+      <a href="http://ngx.cc/">ngx cc</a>
+      <ul id="menu">
+        <li><a href="javascript:toggle('planetfeeds');">Planet Feeds</a></li>
+        <li><a href="javascript:toggle('feeddiv');">People Aggregated</a></li>
+        <li><a href="javascript:toggle('addfeed');">Add Your Blog</a></li>
+        <li><a href="javascript:toggle('communitydiv');">Ngx Community</a></li>
+      </ul>
+    </div>
+    <div id="content">
+
+      <div id="planetfeeds" class="menucontent">
+        <h2>Planet Feeds</h2>
+        <p>
+          <a href="/rss20.xml"><img src="/images/feed_rss20.gif" alt="RSS 2.0" width="100" height="100" /></a>
+          <a href="/rss10.xml"><img src="/images/feed_rss10.gif" alt="RSS 1.0" width="100" height="100" /></a>
+          <a href="/atom.xml"><img src="/images/feed_atom.gif" alt="ATOM" width="100" height="100" /></a>
+          <a href="/foafroll.xml"><img src="/images/feed_foaf.gif" alt="RDF/FOAF" width="100" height="100" /></a>
+          <a href="/opml.xml"><img src="/images/feed_opml.gif" alt="OPML" width="100" height="100" /></a>
+        </p>
+      </div>
+
+      <div id="feeddiv" class="menucontent">
+        <h2>People Aggregated</h2>
+        <table id="feeds">
+          <tr id="feedsheader">
+            <th id="feedsheader_feed">Feed</th>
+            <th id="feedsheader_rss">RSS</th>
+          </tr>
+          <TMPL_LOOP Channels>
+          <tr class="feedsrow">
+            <td><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title_plain ESCAPE="HTML">"><TMPL_VAR name></a></td>
+            <td><a class="xmlbutton" href="<TMPL_VAR url ESCAPE="HTML">">XML</a></td>
+          </tr>
+          </TMPL_LOOP>
+        </table>
+      </div>
+
+      <div id="addfeed" class="menucontent">
+        <h2>Add Your Feed</h2>
+        <p>
+          If you're interested in adding your feed to Planet Nnx, please read the <a href="https://github.com/ngx/planet">README</a> file on github.
+        </p>
+      </div>
+
+      <div id="communitydiv" class="menucontent">
+        <h2>Nginx Community</h2>
+        <p>
+          <a href="http://nginx.org/">Nginx Website</a><br />
+          <a href="http://docs.ngx.cc/">Nginx Documentation</a><br />
+          <a href="http://ngx.cc/">Ngx Community</a><br />
+          <a href="http://nginx.org/mailman/">Mailing Lists</a><br />
+          <a href="http://webchat.freenode.net/?randomnick=1&amp;channels=nginx&amp;uio=d4">IRC Channel</a><br />
+          <a href="http://forum.nginx.org/">Forums</a>
+        </p>
+      </div>
+
+      <img src="/images/between-posts.png" alt="" style="margin-top: 5px;">
+<TMPL_LOOP Items>
+ <TMPL_IF new_date>
+  <TMPL_UNLESS __FIRST__>
+      </div> ### channelgroup
+  </TMPL_UNLESS> ### __first__
+      <div class="day">
+        <h2><TMPL_VAR new_date></h2>
+      </div>
+ </TMPL_IF> ### new_date
+ <TMPL_IF new_channel>
+  <TMPL_UNLESS new_date>
+      </div> ### channelgroup
+  </TMPL_UNLESS> ### new_date
+      <div class="channelgroup">
+        <img class="face" src="/heads/<TMPL_VAR channel_face ESCAPE="HTML">" alt="">
+ </TMPL_IF> ### new_channel
+        <div class="entrygroup">
+          <h3><span class="namehead"><TMPL_VAR channel_name> (<TMPL_VAR channel_nick>)</span></h3>
+ <TMPL_IF title>
+          <h4><span class="blogtitle"><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></span></h4>
+ </TMPL_IF> ### title
+          <div class="entry">
+            <div class="blogcontent"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
+              <TMPL_VAR content>
+            </div>
+            <p class="date"><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR date></a></p>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+ <TMPL_IF __LAST__>
+      </div> ### channelgroup
+ </TMPL_IF> ### __last__
+</TMPL_LOOP>
+
+      <div id="footer">
+        Planet Ngx is a window into the world of Nginx through the eyes of the developers and contributors that bring Nginx to life.
+      </div>
+
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34705911-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
