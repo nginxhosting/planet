@@ -35,3 +35,10 @@ Add Yourself
 
 * Click "Pull Request"
 * That's it! We'll approve the merge request if everything checks out.
+
+Notes
+-----
+* /opt/planet/config.ini -> /opt/planet/ngx-data/config.ini
+* /opt/planet/ngx-www/misc -> /opt/planet/ngx-data/dat/misc
+* /opt/planet/ngx-www/heads -> /opt/planet/ngx-data/heads
+* python /opt/planet/planet.py config.ini

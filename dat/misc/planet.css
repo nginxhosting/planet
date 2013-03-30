@@ -1,0 +1,150 @@
+/**
+ * Layout
+ */
+
+body {
+  background-color: #e8ecef;
+  color: #000000;
+  font: 100%/1.5 "ff-meta-web-pro-1","ff-meta-web-pro-2",Arial,"Helvetica Neue",sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #465158;
+  font-size: 0.8em;
+  width: 100%;
+  min-width: 800px;
+  height: 3em;
+  padding-top: 0.4em;
+}
+
+#header a {
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 2.4em;
+  vertical-align: center;
+  padding: 0.4em 0.8em;
+}
+
+#menu {
+  float: right;
+  list-style: none outside none;
+  line-height: 2.5em;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+#menu a {
+  background-color: #697983;
+  border: medium none;
+  border-radius: 3px 3px 3px 3px;
+  margin: 0.375em 0;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+}
+
+#menu li {
+  float: right;
+  padding-right: 10px;
+}
+
+#content {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.note {
+  background: none repeat scroll 0 0 #9999aa;
+  color: #f7f7f7;
+  padding: 12px;
+  margin-top: 50px;
+}
+
+.face {
+  margin-right: 10px;
+  width: 64px;
+  height: 64px;
+  float: right
+}
+
+.channelgroup {
+  /*background: url(../images/default-face.png) no-repeat bottom left;*/
+  background: url(../images/between-posts.png) no-repeat bottom center;
+  padding: 0px 0px 10px 0px;
+  /*margin: 0 0 12px 0;*/
+}
+
+.channelgroup h4 .blogtitle {
+  font-size: 240%;
+  font-weight: lighter;
+  margin: 0px;
+  text-align: left;
+}
+
+.channelgroup h4 .blogtitle a {
+  color: #455269; /*wee bit lighter*/
+}
+
+.entrygroup {
+  margin: 0px 38px 0px 28px;
+}
+
+.entry p:first-child:first-letter {
+  font-size: 250%;
+}
+
+hr {
+  display: none;
+}
+
+.entry p.date {
+  font-size: 7pt;
+  text-align: right;
+}
+
+.entry img {
+  padding: 0;
+  margin: 5px;
+  max-width: 100%;
+}
+
+.entry blockquote {
+  border: 1px dashed #374153;
+  background-color: #cccccc;
+  margin: 7px 20px 7px 20px;
+  padding: 0px;
+  overflow: auto;
+}
+
+.entry blockquote p:first-child:first-letter {
+  font-size: 8pt;
+  margin: 0;
+  padding: 0;
+}
+
+.entry code {
+  margin: 0;
+  padding: 0;
+  white-space: inherit;
+}
+
+/**
+ * Content
+ */
+
+h4 {
+  font-size: 8px;
+}
+
+.menucontent {
+  display: none;
+  /* padding: 0px 0px 0px 20px; */
+  padding: 0 15px 15px;
+  margin: 10px 15px 0;
+  background-color: #eeeeee;
+  border-color: #cccccc;
+  border-width: 1px;
+  border-style: solid;
+}
